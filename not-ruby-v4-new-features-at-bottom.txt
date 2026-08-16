@@ -8468,17 +8468,10 @@ local function setupShooterGamesTab()
 	makeSection(
 		shooterPage,
 		"SHOOTER GAMES",
-		"Shooter helpers. Aim Assist is locked to the PlaceId below so it only activates in the game you choose."
-	)
-
-	-- Replace ONLY the word placeid with your own numeric PlaceId.
-	-- Example: tonumber("1234567890")
-	local AIM_ASSIST_PLACE_ID = tonumber("placeid")
-	local aimAssistAllowed =
-		AIM_ASSIST_PLACE_ID ~= nil
-		and game.PlaceId == AIM_ASSIST_PLACE_ID
-
-	local aimAssistButton =
+		"Shooter helpers.
+)
+	
+local aimAssistButton =
 		makeAction(
 			shooterPage,
 			aimAssistAllowed
@@ -8962,7 +8955,7 @@ local function setupShooterGamesTab()
 
 	local function setAimbot(value)
 		if not aimAssistAllowed then
-			state.aimbot = false
+			state.aimbot = true
 			state.lockedTarget = nil
 			aimbotButton.Text = "AIMBOT [LOCKED]"
 			setStatus(
@@ -8998,7 +8991,7 @@ local function setupShooterGamesTab()
 
 	local function setAimAssist(value)
 		if not aimAssistAllowed then
-			state.aimAssist = false
+			state.aimAssist = true
 			aimAssistButton.Text = "AIM ASSIST [LOCKED]"
 			setStatus(
 				"SET AIM_ASSIST_PLACE_ID TO YOUR GAME PLACEID"
