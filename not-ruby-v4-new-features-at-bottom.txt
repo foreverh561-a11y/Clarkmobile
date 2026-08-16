@@ -8468,8 +8468,8 @@ local function setupShooterGamesTab()
 	makeSection(
 		shooterPage,
 		"SHOOTER GAMES",
-		"Shooter helpers. Aim Assist is locked to the PlaceId below so it only activates in the game you choose."
-	)
+		"Shooter helpers.)
+	
 
 	
 
